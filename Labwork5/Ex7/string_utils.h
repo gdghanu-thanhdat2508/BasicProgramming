@@ -1,0 +1,1 @@
+void find_char_a(const char str[]);

@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "circum.h": "c",
+        "polynomial.h": "c",
+        "stdio.h": "c",
+        "expression.h": "c",
+        "__locale": "c",
+        "swap.h": "c",
+        "leapyear.h": "c",
+        "solve.h": "c",
+        "divisor.h": "c",
+        "prime.h": "c",
+        "math.h": "c",
+        "sum.h": "c",
+        "digitproduct.h": "c",
+        "fibo.h": "c",
+        "fac.h": "c",
+        "limits": "c",
+        "ratio": "c",
+        "algorithm": "c",
+        "power.h": "c",
+        "minmax.h": "c",
+        "gcd.h": "c",
+        "pointer_utils.h": "c"
+    }
+}

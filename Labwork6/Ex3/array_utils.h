@@ -1,0 +1,1 @@
+void print_array_with_pointers(int *arr, int size);
