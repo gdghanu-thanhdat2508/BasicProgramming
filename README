@@ -9,3 +9,10 @@ math.h
 cd -> Change Directly
 
 gcc [tenfile].c -o [tenphuongtrinh]
+
+%lld -> long long 
+%d -> int 
+%c -> char 
+%f -> float 
+%ld -> long int 
+%lf -> double 
