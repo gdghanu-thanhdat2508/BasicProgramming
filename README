@@ -1,0 +1,11 @@
+## CAC THU VIEN CAN NHO 
+
+stdio.h
+stlib.h
+math.h
+
+
+## LUU Y 
+cd -> Change Directly
+
+gcc [tenfile].c -o [tenphuongtrinh]
