@@ -21,6 +21,7 @@
         "power.h": "c",
         "minmax.h": "c",
         "gcd.h": "c",
-        "pointer_utils.h": "c"
+        "pointer_utils.h": "c",
+        "ostream": "c"
     }
 }
