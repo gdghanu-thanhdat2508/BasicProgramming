@@ -31,27 +31,10 @@ int main()
 
         printf("Enter information for student %d:\n", i + 1);
 
-        printf("  Name        : ");
-        fgets(students[i].name, MAX_NAME_LENGTH, stdin);
-        // Remove newline if present
-        students[i].name[strcspn(students[i].name, "\n")] = '\0';
-
-        printf("  Roll Number : ");
-        scanf("%d", &students[i].roll_number);
-
-        printf("  Age         : ");
-        scanf("%d", &students[i].age);
-
-        printf("  Total Marks : ");
-        scanf("%lf", &students[i].total_marks);
-
-        // Clear input buffer
-        while (getchar() != '\n')
-            ;
     }
 
-    // Print the student information
-    printf("\n========================================\n");
+    // Print the Students information
+    printf("========================================\n");
     printf("           Student Records              \n");
     printf("========================================\n");
 
