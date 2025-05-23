@@ -29,22 +29,36 @@ int main()
             return 1;
         }
 
-        printf("Enter information for student %d:\n", i + 1);
+        printf("\nNhap thong tin cho sinh vien %d:\n", i + 1);
 
+        printf("  Ten          : ");
+        fgets(students[i].name, MAX_NAME_LENGTH, stdin);
+        students[i].name[strcspn(students[i].name, "\n")] = '\0';  // Xoa newline neu co
+
+        printf("  Ma so        : ");
+        scanf("%d", &students[i].roll_number);
+
+        printf("  Tuoi         : ");
+        scanf("%d", &students[i].age);
+
+        printf("  Tong diem    : ");
+        scanf("%lf", &students[i].total_marks);
+
+        while (getchar() != '\n'); // Xoa ky tu thua trong buffer
     }
 
     // Print the Students information
-    printf("========================================\n");
-    printf("           Student Records              \n");
+    printf("\n========================================\n");
+    printf("           Danh sach sinh vien          \n");
     printf("========================================\n");
 
     for (int i = 0; i < n; i++)
     {
-        printf("\nStudent %d:\n", i + 1);
-        printf("  Name        : %s\n", students[i].name);
-        printf("  Roll Number : %d\n", students[i].roll_number);
-        printf("  Age         : %d\n", students[i].age);
-        printf("  Total Marks : %.2f\n", students[i].total_marks);
+        printf("\nSinh vien %d:\n", i + 1);
+        printf("  Ten          : %s\n", students[i].name);
+        printf("  Ma so        : %d\n", students[i].roll_number);
+        printf("  Tuoi         : %d\n", students[i].age);
+        printf("  Tong diem    : %.2f\n", students[i].total_marks);
     }
 
     printf("========================================\n");
