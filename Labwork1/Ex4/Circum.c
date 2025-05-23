@@ -1,5 +1,4 @@
 #include "Circum.h"
-
 #define PI 3.14159
 
 double calculateCircumference(double radius)
