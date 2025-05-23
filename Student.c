@@ -1,7 +1,9 @@
-// C Program to Store Information of Students Using Structure
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+// Define max name length
+#define MAX_NAME_LENGTH 100
 
 // Create the student structure
 struct Student
@@ -14,40 +16,42 @@ struct Student
 
 int main()
 {
-
-    // Create an array of student structure variable with
-    // 5 Student's records
     struct Student students[5];
     int n = sizeof(students) / sizeof(struct Student);
 
-    // Get the students data
-    students[0].roll_number = 1;
-    students[0].name = "Geeks1";
-    students[0].age = 12;
-    students[0].total_marks = 78.50;
+    // Input the student data
+    for (int i = 0; i < n; i++)
+    {
+        students[i].name = (char *)malloc(MAX_NAME_LENGTH * sizeof(char));
+        if (students[i].name == NULL)
+        {
+            printf("Memory allocation failed!\n");
+            return 1;
+        }
 
-    students[1].roll_number = 5;
-    students[1].name = "Geeks5";
-    students[1].age = 10;
-    students[1].total_marks = 56.84;
+        printf("Enter information for student %d:\n", i + 1);
 
-    students[2].roll_number = 2;
-    students[2].name = "Geeks2";
-    students[2].age = 11;
-    students[2].total_marks = 87.94;
+        printf("  Name        : ");
+        fgets(students[i].name, MAX_NAME_LENGTH, stdin);
+        // Remove newline if present
+        students[i].name[strcspn(students[i].name, "\n")] = '\0';
 
-    students[3].roll_number = 4;
-    students[3].name = "Geeks4";
-    students[3].age = 12;
-    students[3].total_marks = 89.78;
+        printf("  Roll Number : ");
+        scanf("%d", &students[i].roll_number);
 
-    students[4].roll_number = 3;
-    students[4].name = "Geeks3";
-    students[4].age = 13;
-    students[4].total_marks = 78.55;
+        printf("  Age         : ");
+        scanf("%d", &students[i].age);
 
-    // Print the Students information
-    printf("========================================\n");
+        printf("  Total Marks : ");
+        scanf("%lf", &students[i].total_marks);
+
+        // Clear input buffer
+        while (getchar() != '\n')
+            ;
+    }
+
+    // Print the student information
+    printf("\n========================================\n");
     printf("           Student Records              \n");
     printf("========================================\n");
 
@@ -61,6 +65,12 @@ int main()
     }
 
     printf("========================================\n");
+
+    // Free allocated memory
+    for (int i = 0; i < n; i++)
+    {
+        free(students[i].name);
+    }
 
     return 0;
 }
